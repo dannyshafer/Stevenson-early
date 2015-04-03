@@ -10,3 +10,8 @@ github_username:  dannyshafer
 
 # Build settings
 markdown: kramdown
+
+analytics :
+  provider : google 
+  google : 
+      tracking_id : 'UA-24830726-1'
