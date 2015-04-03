@@ -1,0 +1,133 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+@import url(http://fonts.googleapis.com/css?family=Muli);
+
+
+// Our variables
+$base-font-family: Muli, Helvetica, Arial, sans-serif;
+$base-font-size:   16px;
+$large-font-size:  $base-font-size * 1.5;
+$small-font-size:  $base-font-size * 0.875;
+$smaller-font-size: $small-font-size * .7;
+$base-line-height: 1.5;
+
+$spacing-unit:     30px;
+
+$text-color:       #5d6967;
+$background-color: #ffffff;
+$background-color-dark: darken($background-color, 5%);
+$brand-color:      #b0c892;
+
+$grey-color:       #828282;
+$grey-color-light: lighten($grey-color, 40%);
+$grey-color-dark:  darken($grey-color, 25%);
+
+// Width of the content area
+$content-width:    100%;
+
+$on-palm:          600px;
+$on-laptop:        800px;
+
+//Border information
+$border-radius:    6px;
+$border-style:     solid;
+$border-width:     1px;
+$border-color:     $background-color;
+
+
+// Using media queries with like this:
+// @include media-query($on-palm) {
+//     .wrapper {
+//         padding-right: $spacing-unit / 2;
+//         padding-left: $spacing-unit / 2;
+//     }
+// }
+@mixin media-query($device) {
+    @media screen and (max-width: $device) {
+        @content;
+    }
+}
+
+
+
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import
+        "base",
+        "layout",
+        "syntax-highlighting"
+;
+
+.site-header > .wrapper {
+	border-style: $border-style;
+	border-width: $border-width;
+	border-color: $border-color;
+	border-radius: $border-radius;
+}
+
+.site-footer > .wrapper {
+	border-style: $border-style;
+	border-width: $border-width;
+	border-color: $border-color;
+	border-radius: $border-radius;
+}
+
+.page-content > .wrapper {
+	border-style: $border-style;
+	border-width: $border-width;
+	border-color: $border-color;
+	border-radius: $border-radius;
+}
+
+.page-link:hover {
+	color: #b0c892;
+	border-style: $border-style;
+	border-width: $border-width;
+	border-color: $border-color;
+	border-radius: $border-radius;
+}
+
+li {
+	list-style-type: none;
+	display: inline;
+}
+
+button {
+	color: $text-color;
+	background: #e8f9ee;
+	border-style: solid;
+	border-width: $border-width;
+	border-color: $border-color;
+	border-radius: $border-radius;
+	line-height: 2em;
+	line-width: 2.5em;
+	padding: 40px;
+	position: relative;
+	font-size: $large-font-size;
+}
+
+button:hover {
+	background-color: $background-color-dark;
+}
+
+img#home {
+	float: left;
+}
+
+p#home {
+    position: relative;
+    left: 5%;
+}
+
+.ygl {
+	text-align: center;
+	font-family: $base-font-family;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.small {
+	font-size: $smaller-font-size;
+}
